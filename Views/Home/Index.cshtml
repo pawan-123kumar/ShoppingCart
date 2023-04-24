@@ -1,0 +1,38 @@
+﻿@model IEnumerable<ShoppingCart.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <div class="card">
+                <img class="card-img-top" src="@Url.Content(item.Image)" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">@Html.DisplayFor(modelItem => item.Name)</h5>
+                    <p class="card-text">@Html.DisplayFor(modelItem => item.Description)</p>
+                    <h6 class="card-subtitle mb-2 text-muted">Price: @Html.DisplayFor(modelItem => item.Price)</h6>
+                    <p class="card-text">Rating: @Html.DisplayFor(modelItem => item.Rating)</p>
+                   
+                    <p class="card-text">Quantity: @Html.DisplayFor(modelItem => item.Quantity)</p>
+                    <p class="card-text">Created By: @Html.DisplayFor(modelItem => item.CreatedBy)</p>
+                    <p class="card-text">Created On: @Html.DisplayFor(modelItem => item.CreatedOn)</p>
+                    <<p class="card-text">Updated By: @Html.DisplayFor(modelItem => item.UpdatedBy)</p>
+                    <p class="card-text">Updated On: @Html.DisplayFor(modelItem => item.UpdatedOn)</p>
+                    <p class="card-text">Is Deleted: @Html.DisplayFor(modelItem => item.IsDeleted)</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        @*<div class="btn-group">
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-sm btn-outline-secondary" })
+                            @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-sm btn-outline-secondary" })
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-sm btn-outline-secondary" })
+                        </div>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
